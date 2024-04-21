@@ -1,6 +1,6 @@
 Title: Schneebrenner?
 Date: 2024-04-20 11:30
-Category: Schneebrenner?
+Category: Schneebrenner
 
 
 Der ein oder andere Besucher meiner Seite wird sich schon fragen, wie man auf den Namen Schneebrenner kommt – außer er kommt so wie ich, auch aus Fünfstetten. In unserer Gegend haben sich nämlich im Laufe der Zeit sozusagen Spitznamen für die einzelnen Ortschaften etabliert, denn in der Vergangenheit waren sich die Dörfer nicht immer so wohlgesonnen, wie das heutzutage hoffentlich der Fall ist. Und so hat man versucht, mit eher negativ behafteten Spitznamen die „Kontrahenten“ etwas aus der Reserve zu locken – teilweise basieren die Namen auf etwas skurril anmutenden Geschichten aus der Vergangenheit, bei der sich die Einwohner der Ortschaften nicht unbedingt mit Rum bekleckert haben. Auf jeden Fall soll sich die Geschichte um den Spitznamen der Fünfstetter ungefähr folgendermaßen zugetragen haben.
