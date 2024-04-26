@@ -1,6 +1,6 @@
 Title: Impressum
 Date: 2024-04-20 11:30
-Category: Impressum
+Category:  
 
 ![Kontakt Information](../images/impressum-300x124.png)
 
