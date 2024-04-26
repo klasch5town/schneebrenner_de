@@ -10,7 +10,7 @@ PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 SSH_HOST=schneebrenner.de
 SSH_PORT=2244
-SSH_USER=websezrvz_3hx63t
+SSH_USER=
 SSH_TARGET_DIR=/home/websezrvz/html/schneebrenner_de
 
 
