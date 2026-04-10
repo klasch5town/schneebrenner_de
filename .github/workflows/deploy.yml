@@ -36,6 +36,9 @@ jobs:
       - name: Add server to known_hosts
         run: echo "${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
 
+      - name: Test SSH connection
+        run: ssh -p 2244 -v -o StrictHostKeyChecking=yes websezrvz_3hx63t@schneebrenner.de "echo connected"
+
       - name: Deploy via rsync
         run: |
           rsync --delete --exclude ".DS_Store" -pthrvz -c \
