@@ -44,4 +44,4 @@ jobs:
           rsync --delete --exclude ".DS_Store" -pthrvz -c \
             -e "ssh -p 2244 -o StrictHostKeyChecking=yes" \
             output/ \
-            websezrvz_3hx63t@schneebrenner.de:/home/websezrvz/html/schneebrenner_de
+            websezrvz_3hx63t@schneebrenner.de:/home/websezrvz/html/schneebrenner
