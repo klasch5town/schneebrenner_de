@@ -1,0 +1,16 @@
+[project]
+name = "schneebrenner"
+version = "0.1.0"
+description = "build environment for my https://www.schneebrenner.de homepage"
+authors = [
+    {name = "klasch", email = "klasch@schneebrenner.de"},
+]
+dependencies = [
+    "pelican>=4.10.1",
+    "invoke>=2.2.0",
+    "livereload>=2.7.0",
+    "markdown>=3.7",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}

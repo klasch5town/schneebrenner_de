@@ -20,7 +20,7 @@ LINKS = (
     ("Pelican", "https://getpelican.com/"),
     ("Python.org", "https://www.python.org/"),
     ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("Impressum", "https://wwww/pages/about.html)"),
+    ("Impressum", "/pages/about.html"),
 )
 
 # Social widget
