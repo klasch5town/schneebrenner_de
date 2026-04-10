@@ -17,10 +17,7 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
-    ("Pelican", "https://getpelican.com/"),
-    ("Python.org", "https://www.python.org/"),
-    ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("Impressum", "/pages/about.html"),
+    ("Atom-Feed", "/feeds/all.atom.xml"),
 )
 
 # Social widget
