@@ -25,16 +25,17 @@ jobs:
       - name: Build site (production settings)
         run: uv run invoke preview
 
-      - name: Set up SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          echo "${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Add server to known_hosts
+        run: echo "${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
 
       - name: Deploy via rsync
         run: |
           rsync --delete --exclude ".DS_Store" -pthrvz -c \
-            -e "ssh -p 2244 -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
+            -e "ssh -p 2244 -o StrictHostKeyChecking=yes" \
             output/ \
             websezrvz_3hx63t@schneebrenner.de:/home/websezrvz/html/schneebrenner_de
