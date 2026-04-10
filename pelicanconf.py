@@ -33,5 +33,15 @@ DEFAULT_PAGINATION = 10
 
 PAGE_ORDER_BY = "sortorder"
 
+MENUITEMS = (
+    ("Home", "/"),
+    ("IT", "/category/it.html"),
+    ("Bildung", "/category/bildung.html"),
+    ("Energie", "/category/energie.html"),
+    ("Freizeit", "/category/freizeit.html"),
+)
+
+DISPLAY_CATEGORIES_ON_MENU = False
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
