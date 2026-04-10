@@ -12,7 +12,8 @@ from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
 
 OPEN_BROWSER_ON_SERVE = True
-SETTINGS_FILE_BASE = "pelicanconf.py"
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+SETTINGS_FILE_BASE = os.path.join(PROJECT_ROOT, "pelicanconf.py")
 SETTINGS = {}
 SETTINGS.update(DEFAULT_CONFIG)
 LOCAL_SETTINGS = get_settings_from_file(SETTINGS_FILE_BASE)
@@ -20,7 +21,7 @@ SETTINGS.update(LOCAL_SETTINGS)
 
 CONFIG = {
     "settings_base": SETTINGS_FILE_BASE,
-    "settings_publish": "publishconf.py",
+    "settings_publish": os.path.join(PROJECT_ROOT, "publishconf.py"),
     # Output path. Can be absolute or relative to tasks.py. Default: 'output'
     "deploy_path": SETTINGS["OUTPUT_PATH"],
     # Remote server configuration

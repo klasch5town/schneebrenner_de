@@ -1,7 +1,6 @@
 Title: GNU Plot
 Date: 2015-02-01 18:59
 Author: klasch
-Category: IT
 Tags: GNUplot, graph
 Slug: gnu-plot
 Status: published
@@ -34,4 +33,4 @@ gnuplot -e "set terminal svg;set grid; plot 'myPlot.dat' using 1 with lines, 'my
 * Die zweite Kurve wird bis auf **using 2** identisch zur ersten Kurve definiert; using 2 gibt an, dass die zweite Spalte der Datei myPlot.dat als Datengrundlage verwendet werden soll.  
 
 Und hier nun das Ergebnis:  
-![myDat](../images/myDat-300x225.png)
+![myDat]({static}/images/myDat-300x225.png)

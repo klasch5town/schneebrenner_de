@@ -1,7 +1,6 @@
 Title: PIP für Python 3.x unter Linux installieren
 Date: 2015-02-22 13:23
 Author: klasch
-Category: IT
 Tags: Computer, Linux, Programmieren, python, Raspberry-Pi
 Slug: pip-fuer-python-3-x-unter-linux-installieren
 Status: published

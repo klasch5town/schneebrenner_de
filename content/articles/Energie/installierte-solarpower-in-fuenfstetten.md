@@ -2,7 +2,6 @@ Title: Installierte Solarpower in Fünfstetten
 Date: 2015-02-08 18:07
 Modified: 2024-04-28 11:55
 Author: klasch
-Category: Energie
 Tags: energie, umwelt
 Slug: installierte-solarpower-in-fuenfstetten
 Status: published
@@ -32,11 +31,11 @@ Tabellarisch sieht das dann so aus:
 Es zeigt sich wieder einmal, dass ein Bild mehr sagt, als "tausend Zahlen". Wer sich aber die Arbeit macht, die Zahlen mal genauer zu betrachten, dem fällt auf, dass im Januar 2010 ein enormer Peak von sage und schreibe 615,6 kWp eingetragen ist. Dieser Wert kommt von einer einzigen Anmeldung, was den Schluss nahe legt, dass es sich wohl um die Inbetriebnahme der Freiflächenanlage beim Kalköfele handeln muss. Für die graphische Betrachtung der Meldungen lasse ich diese Anlage außen vor, denn das würde dazu führen, dass in den Graphiken ein großer Peak auftaucht und die restlichen Meldungen im "Rauschen" unter gehen.  
 Mit den restlichen Zahlen ergibt sich dann über die Jahre folgendes Bild:
 
-![Photovoltaikmeldungen Fünfstetten 2009-2014](../images/Photovoltaikmeldungen5town2009-2014.png )
+![Photovoltaikmeldungen Fünfstetten 2009-2014]({static}/images/Photovoltaikmeldungen5town2009-2014.png )
 
 _Photovoltaikmeldungen Fünfstetten 2009-2014_
 
-![Photovoltaikmeldungen Fünfstetten 2009-2014 - pro Monat](../images/Photovoltaikmeldungen5town2009-2015monate.png)
+![Photovoltaikmeldungen Fünfstetten 2009-2014 - pro Monat]({static}/images/Photovoltaikmeldungen5town2009-2015monate.png)
 
 _Photovoltaikmeldungen Fünfstetten 2009-2014 - pro Monat_
 

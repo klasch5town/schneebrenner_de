@@ -1,7 +1,6 @@
 Title: Facebook-Account gelöscht
 Date: 2015-02-01 14:35
 Author: klasch
-Category: IT
 Tags: account löschen, delete account, facebook, soziale Netzwerke
 Slug: facebook-account-geloescht
 Status: published

@@ -2,7 +2,6 @@ Title: Mathematik-Programm
 Date: 2015-02-01 14:47
 Modified: 2024-05-01 14:45
 Author: klasch
-Category: Bildung
 Tags: Anwendung, Mathematik, Programm
 Slug: mathematik-programm
 Status: published
@@ -11,7 +10,7 @@ Mit diesem Artikel will ich auf ein Mathe-Programm hinweisen, dass mir auf Anhie
 Es handelt sich um das Programm [Geogebra](http://www.geogebra.org "Geogebra Homepage"). ([Beschreibung in Wikipedia](http://de.wikipedia.org/wiki/Geogebra)).
 Dieses kann sowohl direkt im Browser geöffnet (unter dem ''Rechner'' Menü - z.B. Rechner Suite), als auch [Offline-Installation](http://www.geogebra.org/download) herunter geladen werden.
 
-![Geogebra mit ein paar einfachen Thermen](../images/Geogebra.png)
+![Geogebra mit ein paar einfachen Thermen]({static}/images/Geogebra.png)
 
 Bild: _[Geogebra](http://www.geogebra.org "Geogebra Homepage") mit ein paar einfachen Thermen_
 

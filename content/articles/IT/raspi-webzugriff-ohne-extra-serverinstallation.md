@@ -1,8 +1,7 @@
 Title: Raspi-Webzugriff ohne extra Serverinstallation
 Date: 2015-04-04 12:44
-Update: 2024-05-20 11:55
+Modified: 2024-05-20 11:55
 Author: klasch
-Category: IT
 Tags: Computer, Linux, python, Raspberry-Pi
 Slug: raspi-webzugriff-ohne-extra-serverinstallation
 Status: published
@@ -49,7 +48,7 @@ Startet man nun das Script mit `python3 cpHelloWorld.py`, so sieht man wie der S
     [04/Apr/2015:09:52:37] ENGINE Bus STARTED
 
 Die Hello-World Seite kann nun von jeder beliebigen Maschine im Netz unter der angegebenen IP-Adresse aufgerufen werden:  
-![cherryPyHelloWorld](../images/cherryPyHelloWorld.png)  
+![cherryPyHelloWorld]({static}/images/cherryPyHelloWorld.png)  
 Und das tolle an diesem Setup ist, dass das Script nach einer Änderung nicht jedes Mal neu gestartet werden muss, sondern das Framework eine Modifikation der Datei automatisch erkennt und diese neu ausliefert.  
 Einfach mal ausprobieren und im Script aus "Hello World" ein "Hello Raspi-World" machen und die Datei abspeichern. Die Konsolenausgabe zeigt an, dass die Änderung erkannt wurde:
 
@@ -73,7 +72,7 @@ Einfach mal ausprobieren und im Script aus "Hello World" ein "Hello Raspi-World"
     [04/Apr/2015:12:21:59] ENGINE Bus STARTED
 
 Nun gilt es nur noch im Browser einen Reload zu veranlassen und siehe da, schon erscheint die Änderung im Browser.  
-![cherryPy\_helloRaspiWorld](../images/cherryPy_helloRaspiWorld.png)  
+![cherryPy\_helloRaspiWorld]({static}/images/cherryPy_helloRaspiWorld.png)  
 Nun lässt sich das Script beliebig erweitern. Dazu rate ich die [Tutorials der cherryPy-Dokumentation](http://docs.cherrypy.org/en/latest/tutorials.html "cherryPy - Tutorials") genauer zu studieren - evtl. gibt es ja auch noch einen weiteren Beitrag zu diesem Thema. Mal schauen, was die Zeit bringt.  
 Noch viel Spaß beim Ausprobieren!
 

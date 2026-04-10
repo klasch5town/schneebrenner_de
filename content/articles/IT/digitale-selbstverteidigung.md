@@ -2,7 +2,6 @@ Title: Digitale Selbstverteidigung
 Date: 2015-02-15 15:45
 Modified: 2024-04-28 08:44
 Author: klasch
-Category: IT
 Tags: Computer, Security
 Slug: digitale-selbstverteidigung
 Status: published

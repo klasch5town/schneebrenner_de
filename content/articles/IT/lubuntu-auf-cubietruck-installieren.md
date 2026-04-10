@@ -1,7 +1,6 @@
 Title: Lubuntu auf Cubietruck installieren
 Date: 2014-10-12 19:15
 Author: klasch
-Category: IT
 Tags: cubietruck, linux, ubuntu
 Slug: lubuntu-auf-cubietruck-installieren
 Status: published

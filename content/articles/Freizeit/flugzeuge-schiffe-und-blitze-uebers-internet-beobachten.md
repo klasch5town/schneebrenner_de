@@ -1,7 +1,6 @@
 Title: Flugzeuge, Schiffe und Blitze übers Internet beobachten
 Date: 2014-09-27 15:59
 Author: klasch
-Category: Freizeit
 Tags: Freizeit, Karten
 Slug: flugzeuge-schiffe-und-blitze-uebers-internet-beobachten
 Status: published
