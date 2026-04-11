@@ -196,6 +196,94 @@ def new(c, path, page=False):
     print(f"Created: {full_path}")
 
 
+@task(help={
+    "lang": "Language: 'de' for German (default) or 'en_US' for American English",
+    "path": "File or directory to check, relative to content/ (default: all markdown files)",
+})
+def spellcheck(c, lang="de", path=None):
+    """Spell-check markdown content files using hunspell"""
+    import re
+    import subprocess
+    from markdown import markdown
+
+    lang_map = {"de": "de_DE", "de_DE": "de_DE", "en": "en_US", "en_US": "en_US"}
+    dict_name = lang_map.get(lang, lang)
+
+    # Verify the dictionary is available
+    probe = subprocess.run(
+        ["hunspell", "-d", dict_name, "-l"],
+        input="test", capture_output=True, text=True,
+    )
+    if probe.returncode != 0:
+        sys.exit(
+            f"Dictionary '{dict_name}' not found. "
+            f"Install it with: sudo pacman -S hunspell-{lang.lower().replace('_', '_')}"
+        )
+
+    content_dir = SETTINGS["PATH"]
+    if path:
+        if path.startswith(content_dir.rstrip("/") + "/"):
+            search_root = path
+        else:
+            search_root = os.path.join(content_dir, path)
+    else:
+        search_root = content_dir
+
+    md_files = []
+    if os.path.isfile(search_root):
+        if search_root.endswith(".md"):
+            md_files = [search_root]
+    else:
+        for root, _, files in os.walk(search_root):
+            for f in sorted(files):
+                if f.endswith(".md"):
+                    md_files.append(os.path.join(root, f))
+
+    if not md_files:
+        sys.exit(f"No markdown files found under: {search_root}")
+
+    # Regex matching a Pelican metadata line (e.g. "Title: Foo" or "Tags: a, b")
+    meta_line = re.compile(r"^\w[\w\s-]*:.*")
+
+    errors_found = False
+    for filepath in md_files:
+        with open(filepath, encoding="utf-8") as f:
+            lines = f.read().splitlines()
+
+        # Strip leading frontmatter block
+        i = 0
+        while i < len(lines) and (meta_line.match(lines[i]) or lines[i].strip() == ""):
+            i += 1
+        body = "\n".join(lines[i:])
+
+        # Markdown → HTML → plain text
+        html = markdown(body, extensions=["tables"])
+        text = re.sub(r"<[^>]+>", " ", html)
+        # Decode HTML entities (e.g. &amp; → &) before further stripping
+        import html as html_module
+        text = html_module.unescape(text)
+        text = re.sub(r"[^\w\s\-äöüÄÖÜß]", " ", text)  # keep word chars + umlauts
+
+        proc = subprocess.run(
+            ["hunspell", "-d", dict_name, "-l"],
+            input=text, capture_output=True, text=True,
+        )
+        misspelled = sorted({
+            w.strip() for w in proc.stdout.splitlines()
+            if w.strip() and not w.strip().startswith("-")
+        })
+
+        if misspelled:
+            errors_found = True
+            rel = os.path.relpath(filepath, content_dir)
+            print(f"\n{rel}:")
+            for word in misspelled:
+                print(f"  {word}")
+
+    if not errors_found:
+        print("No spelling errors found.")
+
+
 def pelican_run(cmd):
     cmd += " " + program.core.remainder  # allows to pass-through args to pelican
     pelican_main(shlex.split(cmd))
