@@ -35,6 +35,7 @@ MENUITEMS = (
     ("IT", "/category/it.html"),
     ("Bildung", "/category/bildung.html"),
     ("Energie", "/category/energie.html"),
+    ("Umwelt", "/category/umwelt.html"),
     ("Freizeit", "/category/freizeit.html"),
 )
 

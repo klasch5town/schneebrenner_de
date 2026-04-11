@@ -157,19 +157,30 @@ def new(c, path, page=False):
     from jinja2 import Environment, FileSystemLoader
 
     content_dir = SETTINGS["PATH"]
-    full_path = os.path.join(content_dir, path)
+    # Accept both "articles/IT/foo.md" and "content/articles/IT/foo.md"
+    if path.startswith(content_dir.rstrip("/") + "/") or path.startswith(content_dir.rstrip("/") + os.sep):
+        rel_path = os.path.relpath(path, content_dir)
+    else:
+        rel_path = path
+    full_path = os.path.join(content_dir, rel_path)
 
     if os.path.exists(full_path):
         sys.exit(f"File already exists: {full_path}")
 
     os.makedirs(os.path.dirname(full_path), exist_ok=True)
 
-    is_page = page or path.startswith("pages/")
+    is_page = page or rel_path.startswith("pages/")
     template_name = "page.md" if is_page else "article.md"
 
-    stem = os.path.splitext(os.path.basename(path))[0]
+    stem = os.path.splitext(os.path.basename(rel_path))[0]
+
+    import re
+    # Split CamelCase into words, then also replace dashes/underscores
+    spaced = re.sub(r"(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])", " ", stem)
+    title = spaced.replace("-", " ").replace("_", " ").title()
+
     context = {
-        "title": stem.replace("-", " ").replace("_", " ").title(),
+        "title": title,
         "date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "slug": stem,
         "author": LOCAL_SETTINGS.get("AUTHOR", "klasch"),
