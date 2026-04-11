@@ -14,7 +14,7 @@ Was mich sehr freut ist die Tatsache, dass von den Protagonisten immer wieder be
 
 Ein weiterer Punkt ist die Körperhygiene und der Geschirr-Abwasch. Hier wird dann immer betont,
 dass man auf biologisch abbaubare Waschmittel zurückgreifen soll. In darauffolgenden Szenen sieht
-man dann dass die Waschmittel in den Gewässern verwendet wird. Und genau hier befindet sich der Fail.
+man dann dass die Waschmittel in den Gewässern verwendet werden. Und genau hier befindet sich der Fail.
 
 **Waschmittel sollten niemals in Gewässern verwendet werden!!**
 
