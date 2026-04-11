@@ -3,7 +3,7 @@ Date: 2026-04-11 14:08
 Author: klasch
 Tags: 
 Slug: HygieneImOutdoorBereich
-Status: draft
+Status: published
 
 Auf Youtube schaue ich mir gerne Outdoor-Videos an - im besonderen wenn es um Skandinavien geht.
 Was mich sehr freut ist die Tatsache, dass von den Protagonisten immer wieder betont wird:
