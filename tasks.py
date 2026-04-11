@@ -148,6 +148,43 @@ def publish(c):
     )
 
 
+@task(help={
+    "path": "Path of the new file relative to content/ (e.g. articles/IT/my-post.md or pages/my-page.md)",
+    "page": "Create a page instead of an article (auto-detected from path when it starts with pages/)",
+})
+def new(c, path, page=False):
+    """Create a new article or page pre-filled with metadata"""
+    from jinja2 import Environment, FileSystemLoader
+
+    content_dir = SETTINGS["PATH"]
+    full_path = os.path.join(content_dir, path)
+
+    if os.path.exists(full_path):
+        sys.exit(f"File already exists: {full_path}")
+
+    os.makedirs(os.path.dirname(full_path), exist_ok=True)
+
+    is_page = page or path.startswith("pages/")
+    template_name = "page.md" if is_page else "article.md"
+
+    stem = os.path.splitext(os.path.basename(path))[0]
+    context = {
+        "title": stem.replace("-", " ").replace("_", " ").title(),
+        "date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "slug": stem,
+        "author": LOCAL_SETTINGS.get("AUTHOR", "klasch"),
+    }
+
+    templates_dir = os.path.join(PROJECT_ROOT, "templates", "new")
+    env = Environment(loader=FileSystemLoader(templates_dir), keep_trailing_newline=True)
+    content = env.get_template(template_name).render(context)
+
+    with open(full_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+    print(f"Created: {full_path}")
+
+
 def pelican_run(cmd):
     cmd += " " + program.core.remainder  # allows to pass-through args to pelican
     pelican_main(shlex.split(cmd))
