@@ -10,8 +10,6 @@ and as I'm used to repositories as an software developer I decided to store the 
 
 Further advantages are that I can track the changes and have it stored not just at my server and local computer (a kind of backup).
 
-And last but not least I use this repository to get into the stuff of automated builds with help of [buildbot](https://www.buildbot.net/). I'm used to Jenkins but wanted to try out buildbot for such a long time. But this is another story worth to be documented in another repository - the homepage buildbot repository.
-
 May be at the end this repository is not just handy for me but will also show how to setup a homepage with pelican - means beyond the quick start example.
 
 ## Setup
@@ -40,20 +38,48 @@ Both serve the site at http://localhost:8000.
 
 ## Content
 
-Articles live in `content/articels/`, pages in `content/pages/`, images in `content/images/`.
+Articles live in `content/articles/`, pages in `content/pages/`, images in `content/images/`.
 
-Files are written in Markdown. A new article looks like this:
+Files are written in Markdown. Use the `new` task to create a pre-filled file:
 
-```markdown
-Title: My article title
-Date: 2026-04-10
-Category: Linux
+```bash
+# New article (Status: draft, path relative to content/ or with content/ prefix)
+uv run invoke new articles/IT/my-post.md
 
-Content goes here.
+# New page (detected automatically from path prefix, or via flag)
+uv run invoke new pages/my-page.md
+uv run invoke new --page articles/my-page.md
 ```
+
+The title, date, author, and slug are pre-filled from the filename and `pelicanconf.py`.
+Set `Status: published` when the article is ready to go live.
+
+## Spell-checking
+
+Check markdown files for spelling errors using hunspell:
+
+```bash
+# Check all files (German by default)
+uv run invoke spellcheck
+
+# Check a single file or directory
+uv run invoke spellcheck --path articles/IT/my-post.md
+uv run invoke spellcheck --path articles/IT/
+
+# Check in American English
+uv run invoke spellcheck --lang en_US
+```
+
+Requires the hunspell dictionaries to be installed:
+
+```bash
+sudo pacman -S hunspell-de hunspell-en_us   # Arch / CachyOS
+```
+
+To suppress false positives (loanwords, proper nouns, technical terms), add them to
+`~/.hunspell_de_DE` (one word per line).
 
 ## Deploy
 
 Pushing to `main` triggers a GitHub Actions workflow that builds the site with production
-settings and uploads it to the server via rsync. See `doc/planning.md` for the one-time
-SSH key setup required to make that work.
+settings and uploads it to the server via rsync.
